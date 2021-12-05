@@ -1,42 +1,33 @@
 import { useEffect, useState } from 'react'
 import { apiChampions } from '../../services/api'
+
 import { ChampionCard } from '../ChampionCard'
 
 import { CardArea, Container } from './styles'
 
-interface ChampionsProps {
-  version: string
-}
-
 interface Champion {
   key: string
-  value: any
+  name: string
+  id: string
+  title: string
 }
 
-export function Champions({ version }: ChampionsProps) {
-  const [isLoading, setIsLoading] = useState(false)
+export function Champions() {
+  const [isLoading, setIsLoading] = useState(true)
   const [championsData, setChampionsData] = useState<Champion[]>([])
 
   useEffect(() => {
     async function getChampions() {
       setIsLoading(true)
       try {
-        const response = await apiChampions.get(
-          `/11.23.1/data/pt_BR/champion.json`
-        )
+        const response = await apiChampions.get('/pt_BR/champion.json')
         const data = response.data.data
+        const newList: Champion[] = Object.values(data)
 
-        const newList = []
-
-        for (let [key, value] of Object.entries(data)) {
-          const dataChampionFormat = { key, value }
-          newList.push(dataChampionFormat)
-        }
-        console.log(newList)
         setChampionsData(newList)
         setIsLoading(false)
       } catch (error) {
-        console.log(error, 'Ta dando errado')
+        console.log(error)
         setIsLoading(false)
       }
     }
@@ -49,9 +40,10 @@ export function Champions({ version }: ChampionsProps) {
         {!isLoading &&
           championsData.map(champion => (
             <ChampionCard
-              id={champion.key}
-              name={champion.value.name}
-              title={champion.value.title}
+              key={champion.key}
+              id={champion.id}
+              name={champion.name}
+              title={champion.title}
             />
           ))}
       </CardArea>

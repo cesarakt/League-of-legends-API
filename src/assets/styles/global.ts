@@ -28,6 +28,17 @@ export const GlobalStyle = createGlobalStyle`
         background-size: cover;
         background-attachment: fixed;
         -webkit-font-smoothing: antialiased;
+
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+            background: #1D2032;
+            
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #678DE6;
+            border-radius: 0.5rem;
+        }
     }
 
     body, textarea, button {

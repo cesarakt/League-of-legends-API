@@ -11,7 +11,7 @@ export function ChampionCard({ name, title, id }: ChampionCardProps) {
     <Container>
       <img
         src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${id}_0.jpg`}
-        alt="Campeão"
+        alt={name}
       />
       <div>
         <h1>{name}</h1>

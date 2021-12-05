@@ -31,8 +31,7 @@ export const GlobalStyle = createGlobalStyle`
 
         &::-webkit-scrollbar {
             width: 0.5rem;
-            background: #1D2032;
-            
+            background: rgba(29,32,50, 0.9);
         }
 
         &::-webkit-scrollbar-thumb {
@@ -59,10 +58,26 @@ export const GlobalStyle = createGlobalStyle`
         cursor: not-allowed;
     }
 
-    .oi {
+    .react-modal-overlay{
+        background: rgba(0,0,0,0.5);
 
-        background-image: url('../../assets/background-image.png');
-        background-size: cover;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .react-modal-content{
+        width: 100%;
+        max-width: 1300px;
+        height: 90%;
+        background: var(--background);
+        position: relative;
+        border-radius: 0.5rem;
     }
 
 

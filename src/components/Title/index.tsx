@@ -8,7 +8,7 @@ export function Title({ name }: TitleProps) {
   return (
     <Container>
       <div></div>
-      <h1>{name}</h1>
+      <span>{name}</span>
       <div></div>
     </Container>
   )

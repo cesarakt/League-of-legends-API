@@ -12,7 +12,10 @@ export const Container = styled.div`
     margin: 0 2rem;
   }
 
-  h1 {
+  span {
+    font-size: 2rem;
+    font-weight: 600;
     color: var(--text-content);
+    letter-spacing: 0.75rem;
   }
 `

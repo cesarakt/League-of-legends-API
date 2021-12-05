@@ -2,12 +2,12 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --background: #0A0A0C
-        --golden: #664B1E
-        --text-content: #C4B998
+        --background: #0A0A0C;
+        --golden: #664B1E;
+        --text-content: #C4B998;
     }
     
-    *{
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -24,7 +24,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: var(--background);
+        background-image: url('/background-img.png');
+        background-size: cover;
+        background-attachment: fixed;
         -webkit-font-smoothing: antialiased;
     }
 
@@ -44,6 +46,12 @@ export const GlobalStyle = createGlobalStyle`
     [disabled] {
         opacity: 0.6;
         cursor: not-allowed;
+    }
+
+    .oi {
+
+        background-image: url('../../assets/background-image.png');
+        background-size: cover;
     }
 
 

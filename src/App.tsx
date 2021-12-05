@@ -1,10 +1,14 @@
+import { Header } from './components/Header'
+import { Title } from './components/Title'
+
 import { GlobalStyle } from './assets/styles/global'
 
 export function App() {
   return (
-    <div>
-      <h1>HELLO WORLD</h1>
+    <>
+      <Header />
+      <Title name="CAMPEÕES" />
       <GlobalStyle />
-    </div>
+    </>
   )
 }

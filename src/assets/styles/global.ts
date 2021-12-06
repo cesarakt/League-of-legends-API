@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
         background-size: cover;
         background-attachment: fixed;
         -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
 
         &::-webkit-scrollbar {
             width: 0.5rem;
@@ -66,13 +67,12 @@ export const GlobalStyle = createGlobalStyle`
         bottom: 0;
         right: 0;
         left: 0;
-
         display: flex;
         align-items: center;
         justify-content: center;
     }
     .react-modal-content{
-        width: 100%;
+        width: 95%;
         max-width: 1300px;
         height: 90%;
         background: var(--background);

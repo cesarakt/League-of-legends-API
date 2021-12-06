@@ -3,26 +3,45 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-image: url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_1.jpg');
+  justify-content: space-between;
   background-size: cover;
   height: 100%;
   border: 2px solid var(--golden);
   border-radius: 0.5rem;
+
+  .closeModal {
+    position: absolute;
+    background: transparent;
+    border: 0;
+    left: 1rem;
+    top: 1rem;
+
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
 `
 export const LoreContent = styled.div`
   background: rgba(10, 10, 12, 0.5);
   border-radius: 0.7rem;
   border: 1px solid var(--golden);
-  max-height: 15rem;
+  max-height: 40%;
   width: 25rem;
-  margin-top: 5rem;
+  margin-top: 10%;
   margin-left: 2rem;
   padding: 1rem 0.2rem 1rem 1rem;
-  flex: 1;
 
   div {
-    max-height: 100%;
+    height: 100%;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
       width: 0.3rem;
@@ -45,7 +64,7 @@ export const SkinArea = styled.div`
   border-radius: 0.5rem;
   background: url('./bg-skins.png');
   background-size: cover;
-  flex: 1;
+  height: auto;
 `
 
 export const Title = styled.div`
@@ -58,18 +77,13 @@ export const Title = styled.div`
     font-size: 3rem;
     letter-spacing: 0.5rem;
   }
-
-  img {
-    width: 100%;
-    object-fit: cover;
-  }
 `
 
 export const TitleArea = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 2rem 0;
 
   div {
     width: 40%;

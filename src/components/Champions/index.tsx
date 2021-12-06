@@ -7,6 +7,7 @@ import { CardArea, Container } from './styles'
 
 interface ChampionsProps {
   handleOpenChampionModal: () => void
+  setSkinName: (name: string) => void
 }
 
 interface Champion {
@@ -16,7 +17,10 @@ interface Champion {
   title: string
 }
 
-export function Champions({ handleOpenChampionModal }: ChampionsProps) {
+export function Champions({
+  handleOpenChampionModal,
+  setSkinName
+}: ChampionsProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [championsData, setChampionsData] = useState<Champion[]>([])
 
@@ -42,15 +46,15 @@ export function Champions({ handleOpenChampionModal }: ChampionsProps) {
     <Container>
       <CardArea>
         {!isLoading &&
-          championsData.map(champion => (
-            <button onClick={handleOpenChampionModal}>
-              <ChampionCard
-                key={champion.key}
-                id={champion.id}
-                name={champion.name}
-                title={champion.title}
-              />
-            </button>
+          championsData.map((champion, index) => (
+            <ChampionCard
+              key={index}
+              id={champion.id}
+              name={champion.name}
+              title={champion.title}
+              click={handleOpenChampionModal}
+              setSkinName={setSkinName}
+            />
           ))}
       </CardArea>
     </Container>

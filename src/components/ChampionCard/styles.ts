@@ -7,11 +7,7 @@ export const Container = styled.div`
   border-radius: 0.5rem;
   margin: 1rem 0;
   transition: linear 0.2s;
-
-  &:hover {
-    border: 1px solid var(--golden);
-    cursor: pointer;
-  }
+  border: 1px solid var(--golden);
 
   img {
     height: 100%;
@@ -30,16 +26,28 @@ export const Container = styled.div`
     background: rgba(0, 0, 0, 0.7);
     border-radius: 0 0 0.5rem 0.5rem;
 
-    h1 {
-      color: var(--golden);
-      font-size: 1rem;
-      letter-spacing: 0.2rem;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(1.5);
     }
 
-    span {
-      color: var(--text-content);
-      font-size: 0.7rem;
-      letter-spacing: 0.1rem;
+    button {
+      background: transparent;
+      border: 0;
+      width: 100%;
+
+      h1 {
+        color: var(--golden);
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+      }
+
+      span {
+        color: var(--text-content);
+        font-size: 0.7rem;
+        letter-spacing: 0.1rem;
+      }
     }
   }
 `
